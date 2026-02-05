@@ -13,7 +13,9 @@ function Contacto() {
       {/* Header */}
       <header className="header">
         <div className="container">
-          <Link to="/" className="logo">Moira Ordo</Link>
+          <Link to="/" className="logo">
+            <img src="/logo2.png" alt="Moira Ordo" className="logo-img" />
+          </Link>
           <nav className="nav">
             <Link to="/producto">Producto</Link>
             <Link to="/nosotros">Nosotros</Link>

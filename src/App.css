@@ -1144,7 +1144,7 @@ html {
 /* Contact Page Styles */
 .contact-hero {
   padding: calc(var(--spacing-xl) + 60px) 0 var(--spacing-lg) 0;
-  background-image: url('/natural-dried-leaf-frame-with-design-space.jpg');
+  background-image: url('/dried-branches-textured-paper-with-copy-space.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1159,7 +1159,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.5);
   z-index: 1;
 }
 
@@ -1173,6 +1173,7 @@ html {
   font-weight: 700;
   color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .contact-subtitle {
