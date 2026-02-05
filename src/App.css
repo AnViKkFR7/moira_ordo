@@ -88,6 +88,14 @@ body {
   letter-spacing: -0.02em;
   color: var(--color-primary);
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  transition: var(--transition);
 }
 
 .logo:hover {
