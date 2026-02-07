@@ -1026,7 +1026,11 @@ body {
   }
 
   .vp-visual {
-    order: -1;
+    order: 2;
+  }
+
+  .vp-text {
+    order: 1;
   }
 
   .vp-visual img {
@@ -1037,14 +1041,71 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .features-grid,
+  .footer {
+    padding: var(--spacing-lg) 0 var(--spacing-sm);
+  }
+
+  .footer-brand .logo {
+    font-size: 1.25rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.875rem;
+  }
+
+  .footer-column h4 {
+    font-size: 0.8rem;
+  }
+
+  .footer-column a {
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .feature-card {
+    padding: var(--spacing-md);
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.875rem;
+  }
+
+  .feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
   .benefits-grid {
     grid-template-columns: 1fr;
   }
 
+  .projects-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .projects-section .section-title {
+    font-size: 1.75rem;
+  }
+
+  .projects-section .section-subtitle {
+    font-size: 0.9rem;
+  }
+
   .carousel-container {
-    max-width: 700px;
-    transform: perspective(1000px) rotateY(-3deg) rotateX(1deg);
+    max-width: 600px;
+    transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
   }
 
   .carousel-container:hover {
@@ -1052,7 +1113,7 @@ body {
   }
 
   .project-image {
-    height: 450px;
+    height: 380px;
   }
 
   .carousel-btn {
@@ -1140,7 +1201,65 @@ body {
   }
 
   .project-image {
-    height: 350px;
+    height: 300px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .feature-card {
+    padding: var(--spacing-sm);
+  }
+
+  .feature-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .feature-card p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .feature-icon {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer {
+    padding: var(--spacing-md) 0 var(--spacing-xs);
+  }
+
+  .footer-brand .logo {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .footer-brand p {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    gap: var(--spacing-sm);
+  }
+
+  .footer-column h4 {
+    font-size: 0.75rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .footer-column a {
+    font-size: 0.8rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .footer-bottom {
+    padding-top: var(--spacing-sm);
+  }
+
+  .footer-bottom p {
+    font-size: 0.75rem;
   }
 
   .carousel-btn {
@@ -1177,11 +1296,126 @@ body {
     width: 10px;
     height: 10px;
   }
+
+  .product-hero {
+    padding: calc(var(--spacing-md) + 60px) 0 var(--spacing-sm) 0;
+  }
+
+  .product-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .product-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .product-section {
+    padding: var(--spacing-md) 0;
+  }
+
+  .product-content {
+    gap: var(--spacing-md);
+  }
+
+  .product-main h3,
+  .product-approach h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .product-main p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .product-list {
+    margin-top: var(--spacing-xs);
+  }
+
+  .product-list li {
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .product-list strong {
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .approach-steps {
+    gap: var(--spacing-xs);
+  }
+
+  .approach-step {
+    grid-template-columns: 45px 1fr;
+    padding: var(--spacing-xs);
+  }
+
+  .step-number {
+    font-size: 1rem;
+  }
+
+  .approach-step h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .approach-step p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
 }
 
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Product Hero */
+.product-hero {
+  padding: calc(var(--spacing-xl) + 60px) 0 var(--spacing-lg) 0;
+  background-image: url('/dried-branches-textured-paper-with-copy-space.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+}
+
+.product-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.product-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.product-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.product-hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
 /* Product Section */
@@ -1440,7 +1674,8 @@ html {
   }
 
   .method-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
   }
 }
 
@@ -1448,6 +1683,63 @@ html {
   .product-content,
   .about-content {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .product-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .product-main h3,
+  .product-approach h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .product-main p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .product-list {
+    margin-top: var(--spacing-sm);
+  }
+
+  .product-list li {
+    padding: var(--spacing-xs) 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .product-list strong {
+    font-size: 0.95rem;
+  }
+
+  .approach-step {
+    padding: var(--spacing-sm);
+  }
+
+  .approach-step h4 {
+    font-size: 1rem;
+  }
+
+  .approach-step p {
+    font-size: 0.875rem;
+  }
+
+  .about-text,
+  .about-values {
+    text-align: center;
+  }
+
+  .value-item {
+    border-left: none;
+    border-top: 4px solid var(--color-accent);
+  }
+
+  .value-item:hover {
+    transform: translateY(-4px);
   }
 
   .approach-step {
@@ -1476,18 +1768,40 @@ html {
 
   .about-philosophy {
     padding: var(--spacing-md);
+    text-align: center;
+  }
+
+  .philosophy-quote {
+    border-left: none;
+    border-top: 4px solid var(--color-accent);
+    padding-left: 0;
+    padding-top: var(--spacing-sm);
   }
 
   .philosophy-quote p {
     font-size: 1.25rem;
   }
 
+  .philosophy-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .method-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
   }
 
   .method-card {
     padding: var(--spacing-md);
+  }
+
+  .method-card h3 {
+    font-size: 1.125rem;
+  }
+
+  .method-card p {
+    font-size: 0.9rem;
   }
 
   .founder-image {
@@ -1511,8 +1825,12 @@ html {
     padding: var(--spacing-lg) 0;
   }
 
+  .cta-section h2 {
+    font-size: 1.75rem;
+  }
+
   .cta-section p {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
@@ -1521,8 +1839,30 @@ html {
     padding: var(--spacing-lg) 0;
   }
 
+  .about-text,
+  .about-values {
+    text-align: center;
+  }
+
   .about-text h2 {
     font-size: 1.75rem;
+  }
+
+  .method-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .method-card {
+    padding: var(--spacing-sm);
+  }
+
+  .method-card h3 {
+    font-size: 1rem;
+  }
+
+  .method-card p {
+    font-size: 0.85rem;
   }
 
   .about-intro {
@@ -1539,14 +1879,39 @@ html {
 
   .about-philosophy {
     padding: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .philosophy-quote {
+    border-left: none;
+    border-top: 4px solid var(--color-accent);
+    padding-left: 0;
+    padding-top: var(--spacing-xs);
+  }
+
+  .philosophy-quote p {
+    font-size: 1.125rem;
+  }
+
+  .philosophy-text {
+    font-size: 0.9rem;
   }
 
   .vp-visual img {
-    max-width: 300px;
+    max-width: 280px;
   }
 
   .section-title {
     font-size: 1.75rem;
+  }
+
+  .projects-section .section-title {
+    font-size: 1.5rem;
+  }
+
+  .projects-section .section-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-xs);
   }
 
   .method-card h3 {
@@ -1566,8 +1931,19 @@ html {
     padding: var(--spacing-md) 0;
   }
 
+  .cta-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
   .cta-section p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-section .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -1793,7 +2169,8 @@ html {
     gap: var(--spacing-lg);
   }
 
-  .contact-title {
+  .contact-title,
+  .product-hero-title {
     font-size: 2.25rem;
   }
 
@@ -1803,15 +2180,18 @@ html {
 }
 
 @media (max-width: 768px) {
-  .contact-hero {
+  .contact-hero,
+  .product-hero {
     padding: calc(var(--spacing-lg) + 60px) 0 var(--spacing-md) 0;
   }
 
-  .contact-title {
+  .contact-title,
+  .product-hero-title {
     font-size: 1.875rem;
   }
 
-  .contact-subtitle {
+  .contact-subtitle,
+  .product-hero-subtitle {
     font-size: 1rem;
   }
 }

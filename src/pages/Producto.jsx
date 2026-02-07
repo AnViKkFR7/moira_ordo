@@ -1,15 +1,20 @@
 function Producto() {
   return (
     <>
-      {/* Product Section */}
-      <section className="product-section" id="producto">
+      {/* Product Hero */}
+      <section className="product-hero">
         <div className="container">
-          <h2 className="section-title">Creamos tu presencia digital</h2>
-          <p className="section-subtitle">
+          <h1 className="product-hero-title">Creamos tu presencia digital</h1>
+          <p className="product-hero-subtitle">
             Páginas web a medida que reflejan la esencia de tu proyecto.<br />
             Sin plantillas. Sin improvisación. Solo soluciones pensadas para ti.
           </p>
-          
+        </div>
+      </section>
+
+      {/* Product Section */}
+      <section className="product-section" id="producto">
+        <div className="container">
           <div className="product-content">
             <div className="product-main">
               <h3>Lo que hacemos</h3>
