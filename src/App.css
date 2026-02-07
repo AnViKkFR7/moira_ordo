@@ -840,13 +840,25 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .header .container {
-    flex-direction: column;
-    gap: var(--spacing-sm);
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .nav {
-    width: 100%;
-    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    font-size: 0.875rem;
+  }
+
+  .cta-btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo-img {
+    height: 32px;
   }
 
   .vp-content {
@@ -864,6 +876,54 @@ body {
   .features-grid,
   .benefits-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: calc(60px + var(--spacing-lg)) 0 var(--spacing-lg);
+    min-height: 80vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content .tagline {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .container {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .nav {
+    gap: 0.5rem;
+  }
+
+  .nav a:not(.cta-btn) {
+    font-size: 0.8rem;
+  }
+
+  .cta-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .logo-img {
+    height: 28px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content .tagline {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
   }
 }
 
@@ -1114,6 +1174,24 @@ html {
 }
 
 /* Responsive Updates */
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .product-content,
   .about-content {
@@ -1132,12 +1210,104 @@ html {
     font-size: 2rem;
   }
 
+  .about-intro {
+    font-size: 1.125rem;
+  }
+
+  .about-values h3 {
+    font-size: 1.25rem;
+  }
+
+  .value-item {
+    padding: var(--spacing-sm);
+  }
+
+  .about-philosophy {
+    padding: var(--spacing-md);
+  }
+
   .philosophy-quote p {
     font-size: 1.25rem;
   }
 
   .method-grid {
     grid-template-columns: 1fr;
+  }
+
+  .method-card {
+    padding: var(--spacing-md);
+  }
+
+  .founder-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .founder-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .cta-section p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .about-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+  }
+
+  .value-item h4 {
+    font-size: 1rem;
+  }
+
+  .philosophy-quote p {
+    font-size: 1.125rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .method-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .founder-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .founder-info h3 {
+    font-size: 1.125rem;
+  }
+
+  .cta-section {
+    padding: var(--spacing-md) 0;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
   }
 }
 
