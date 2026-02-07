@@ -1,6 +1,75 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+  
+  const projects = [
+    {
+      id: 1,
+      image: '/Captura de pantalla 2026-02-07 113628.png',
+      title: 'Proyecto 1',
+      description: 'Web corporativa minimalista'
+    },
+    {
+      id: 2,
+      image: '/Captura de pantalla 2026-02-07 113822.png',
+      title: 'Proyecto 2',
+      description: 'Propiedades exclusivas en las mejores zonas de Barcelona y la Costa Dorada'
+    },
+    {
+      id: 3,
+      image: '/Captura de pantalla 2026-02-07 113831.png',
+      title: 'Proyecto 3',
+      description: 'Propiedades destacadas'
+    },
+    {
+      id: 4,
+      image: '/Captura de pantalla 2026-02-07 113909.png',
+      title: 'Movil',
+      description: 'Responsive'
+    }
+  ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % projects.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length)
+  }
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index)
+  }
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      nextSlide()
+    }
+    if (touchStart - touchEnd < -75) {
+      prevSlide()
+    }
+  }
+
+  // Auto-play carousel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide()
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [currentSlide])
+
   return (
     <>
       {/* Hero Section */}
@@ -46,11 +115,7 @@ function Home() {
               </ul>
             </div>
             <div className="vp-visual">
-              <div className="visual-box">
-                <div className="visual-line"></div>
-                <div className="visual-line"></div>
-                <div className="visual-line"></div>
-              </div>
+              <img src="/web-icon-set-drawn-chalkboard-with-white-chalk.jpg" alt="Sistema de iconos web" />
             </div>
           </div>
         </div>
@@ -72,6 +137,68 @@ function Home() {
             <div className="benefit-item">
               <h3>Agencias</h3>
               <p>Entrega proyectos profesionales con autonomía de contenido para el cliente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Carousel Section */}
+      <section className="projects-section">
+        <div className="container">
+          <h2 className="section-title">Nuestros proyectos</h2>
+          <p className="section-subtitle">
+            Soluciones digitales diseñadas con precisión y ejecutadas con excelencia
+          </p>
+          
+          <div className="carousel">
+            <div 
+              className="carousel-container"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div 
+                className="carousel-track"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {projects.map((project) => (
+                  <div key={project.id} className="carousel-slide">
+                    <div className="project-image">
+                      <img src={project.image} alt={project.title} />
+                      <div className="project-overlay">
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <button 
+                className="carousel-btn carousel-btn-prev" 
+                onClick={prevSlide}
+                aria-label="Anterior"
+              >
+                ‹
+              </button>
+              <button 
+                className="carousel-btn carousel-btn-next" 
+                onClick={nextSlide}
+                aria-label="Siguiente"
+              >
+                ›
+              </button>
+            </div>
+            
+            <div className="carousel-dots">
+              {projects.map((_, index) => (
+                <button
+                  key={index}
+                  className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Ir a proyecto ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
