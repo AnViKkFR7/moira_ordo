@@ -1,31 +1,15 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
+  const { t } = useLanguage()
   
-  const projects = [
-    {
-      id: 1,
-      image: '/Captura de pantalla 2026-02-07 113628.png',
-      title: 'Empresa inmobiliaria',
-      description: 'Web corporativa minimalista'
-    },
-    {
-      id: 2,
-      image: '/Captura de pantalla 2026-02-07 113822.png',
-      title: 'Propiedades destacadas',
-      description: 'Propiedades exclusivas en las mejores zonas de Barcelona y la Costa Dorada'
-    },
-    {
-      id: 3,
-      image: '/Captura de pantalla 2026-02-07 113909.png',
-      title: 'Adaptada a móviles',
-      description: 'Responsive'
-    }
-  ]
+  const projects = t('home.projects')
+  const benefits = t('home.benefits.items')
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % projects.length)
@@ -82,15 +66,15 @@ function Home() {
         </div>
         <div className="container hero-content">
           <h1 className="hero-title">
-            El destino ordenado<br />del contenido
+            {t('home.hero.titleLine1')}<br />{t('home.hero.titleLine2')}
           </h1>
           <p className="hero-subtitle">
-            Un sistema estable para contenido cambiante.<br />
-            Pensado para webs que no se improvisan.
+            {t('home.hero.subtitleLine1')}<br />
+            {t('home.hero.subtitleLine2')}
           </p>
           <div className="hero-actions">
-            <Link to="/contacto" className="btn-primary">Comenzar ahora</Link>
-            <button className="btn-secondary">Ver demo</button>
+            <Link to="/contacto" className="btn-primary">{t('home.hero.primaryCta')}</Link>
+            <button className="btn-secondary">{t('home.hero.secondaryCta')}</button>
           </div>
         </div>
       </section>
@@ -100,12 +84,12 @@ function Home() {
         <div className="container">
           <div className="vp-content">
             <div className="vp-text">
-              <h2>No crea el mundo.<br />Decide cómo fluye.</h2>
-              <p>Moira Ordo no es un constructor visual. No es un CMS genérico. Es infraestructura invisible que separa claramente diseño y contenido.</p>
+              <h2>{t('home.valueProposition.titleLine1')}<br />{t('home.valueProposition.titleLine2')}</h2>
+              <p>{t('home.valueProposition.description')}</p>
               <ul className="vp-list">
-                <li>El creador define la estructura</li>
-                <li>El cliente gestiona el contenido</li>
-                <li>El sistema garantiza el orden</li>
+                <li>{t('home.valueProposition.list.0')}</li>
+                <li>{t('home.valueProposition.list.1')}</li>
+                <li>{t('home.valueProposition.list.2')}</li>
               </ul>
             </div>
             <div className="vp-visual">
@@ -118,20 +102,14 @@ function Home() {
       {/* Benefits Section */}
       <section className="benefits">
         <div className="container">
-          <h2 className="section-title">Pensado para profesionales</h2>
+          <h2 className="section-title">{t('home.benefits.title')}</h2>
           <div className="benefits-grid">
-            <div className="benefit-item">
-              <h3>Diseñadores</h3>
-              <p>Tu visión creativa permanece intacta. El cliente gestiona contenido sin tocar el diseño.</p>
-            </div>
-            <div className="benefit-item">
-              <h3>Desarrolladores</h3>
-              <p>Código limpio, estructura predecible. Sin sorpresas en producción.</p>
-            </div>
-            <div className="benefit-item">
-              <h3>Agencias</h3>
-              <p>Entrega proyectos profesionales con autonomía de contenido para el cliente.</p>
-            </div>
+            {benefits.map((benefit) => (
+              <div key={benefit.title} className="benefit-item">
+                <h3>{benefit.title}</h3>
+                <p>{benefit.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -139,9 +117,9 @@ function Home() {
       {/* Projects Carousel Section */}
       <section className="projects-section">
         <div className="container">
-          <h2 className="section-title">Nuestros proyectos</h2>
+          <h2 className="section-title">{t('home.projectsSection.title')}</h2>
           <p className="section-subtitle">
-            Soluciones digitales diseñadas con precisión y ejecutadas con excelencia
+            {t('home.projectsSection.subtitle')}
           </p>
           
           <div className="carousel">
@@ -171,14 +149,14 @@ function Home() {
               <button 
                 className="carousel-btn carousel-btn-prev" 
                 onClick={prevSlide}
-                aria-label="Anterior"
+                aria-label={t('home.projectsSection.prevAria')}
               >
                 ‹
               </button>
               <button 
                 className="carousel-btn carousel-btn-next" 
                 onClick={nextSlide}
-                aria-label="Siguiente"
+                aria-label={t('home.projectsSection.nextAria')}
               >
                 ›
               </button>
@@ -190,7 +168,7 @@ function Home() {
                   key={index}
                   className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
                   onClick={() => goToSlide(index)}
-                  aria-label={`Ir a proyecto ${index + 1}`}
+                  aria-label={t('home.projectsSection.goToAria', { index: index + 1 })}
                 />
               ))}
             </div>
@@ -201,9 +179,9 @@ function Home() {
       {/* CTA Section */}
       <section className="cta-section" id="contacto">
         <div className="container">
-          <h2>Donde el contenido sigue su orden</h2>
-          <p>Únete a profesionales que confían en la estabilidad.</p>
-          <Link to="/contacto" className="btn-primary large">Comenzar ahora</Link>
+          <h2>{t('home.cta.title')}</h2>
+          <p>{t('home.cta.subtitle')}</p>
+          <Link to="/contacto" className="btn-primary large">{t('home.cta.button')}</Link>
         </div>
       </section>
     </>

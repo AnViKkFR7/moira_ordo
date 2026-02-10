@@ -1,12 +1,17 @@
+import { useLanguage } from '../i18n/LanguageContext'
+
 function Producto() {
+  const { t } = useLanguage()
+  const adminFeatures = t('producto.admin.features')
+
   return (
     <>
       {/* Product Hero (Modified for admin context) */}
       <section className="product-hero">
         <div className="container">
-          <h1 className="product-hero-title">Tu Centro de Control</h1>
+          <h1 className="product-hero-title">{t('producto.hero.title')}</h1>
           <p className="product-hero-subtitle">
-            Más que una web, te entregamos una plataforma. Gestiona tu negocio digital con autonomía total.
+            {t('producto.hero.subtitle')}
           </p>
         </div>
       </section>
@@ -17,24 +22,19 @@ function Producto() {
           <div className="admin-intro">
             <div className="admin-description-highlight">
               <p>
-                Analizamos a fondo la operativa de tu negocio para arquitecturar un <strong>modelo de datos dinámico</strong> a medida. 
-                Estructuramos meticulosamente toda tu información —desde contenidos multimedia y documentos corporativos hasta catálogos complejos— 
-                creando un ecosistema digital que se adapta exactamente a tus necesidades reales.
+                {t('producto.admin.highlight')}
               </p>
             </div>
           </div>
 
           <div className="admin-feature-row">
             <div className="admin-feature-content">
-              <h3>Panel de Administración Intuitivo</h3>
-              <p>
-                Olvídate de interfaces complicadas. Nuestro panel está diseñado pensando en la claridad. 
-                Tendrás una visión global de tu sitio, estadísticas y acceso rápido a lo que necesitas gestionar.
-              </p>
+              <h3>{adminFeatures[0].title}</h3>
+              <p>{adminFeatures[0].description}</p>
               <ul className="admin-list">
-                <li>Diseño limpio y amigable.</li>
-                <li>Acceso inmediato desde cualquier lugar.</li>
-                <li>Panel personalizado para tu empresa.</li>
+                {adminFeatures[0].list.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
               </ul>
             </div>
             <div className="admin-feature-visual">
@@ -46,11 +46,8 @@ function Producto() {
 
           <div className="admin-feature-row reverse">
             <div className="admin-feature-content">
-              <h3>Control Total de Contenidos</h3>
-              <p>
-                Añade nuevos productos, edita textos o cambia imágenes en tiempo real. 
-                Tienes la libertad de mantener tu web viva y actualizada sin depender de nosotros para cada cambio pequeño.
-              </p>
+              <h3>{adminFeatures[1].title}</h3>
+              <p>{adminFeatures[1].description}</p>
             </div>
             <div className="admin-feature-visual">
               <div className="visual-placeholder">
@@ -61,14 +58,14 @@ function Producto() {
 
           <div className="admin-feature-row">
             <div className="admin-feature-content">
-              <h3>Gestión de Equipos y Roles</h3>
-              <p>
-                Tu negocio crece, y tu equipo también. Invita a miembros de tu empresa y decide qué pueden hacer.
-              </p>
+              <h3>{adminFeatures[2].title}</h3>
+              <p>{adminFeatures[2].description}</p>
               <ul className="admin-list">
-                <li><strong>Administradores:</strong> Control total.</li>
-                <li><strong>Editores:</strong> Pueden modificar contenido.</li>
-                <li><strong>Lectores:</strong> Solo visualización.</li>
+                {adminFeatures[2].list.map((item) => (
+                  <li key={item.title}>
+                    <strong>{item.title}:</strong> {item.description}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="admin-feature-visual">
@@ -84,9 +81,9 @@ function Producto() {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
-          <h2>¿Listo para comenzar tu proyecto?</h2>
-          <p>Hablemos de cómo podemos ayudarte a crear tu presencia digital.</p>
-          <button className="btn-primary large">Contactar ahora</button>
+          <h2>{t('producto.cta.title')}</h2>
+          <p>{t('producto.cta.subtitle')}</p>
+          <button className="btn-primary large">{t('producto.cta.button')}</button>
         </div>
       </section>
     </>

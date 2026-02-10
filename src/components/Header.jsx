@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { language, setLanguage, t } = useLanguage()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -10,6 +12,10 @@ function Header() {
 
   const closeMenu = () => {
     setIsMenuOpen(false)
+  }
+
+  const handleLanguageChange = (nextLanguage) => {
+    setLanguage(nextLanguage)
   }
 
   return (
@@ -22,7 +28,7 @@ function Header() {
         <button 
           className="mobile-menu-btn" 
           onClick={toggleMenu} 
-          aria-label="Menu"
+          aria-label={t('header.menuLabel')}
           aria-expanded={isMenuOpen}
         >
           <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
@@ -38,10 +44,26 @@ function Header() {
               <img src="/logo2.png" alt="Moira Ordo" className="mobile-logo-img" />
             </Link>
           </div>
-          <Link to="/producto" onClick={closeMenu}>Producto</Link>
-          <Link to="/servicios" onClick={closeMenu}>Servicios</Link>
-          <Link to="/nosotros" onClick={closeMenu}>Nosotros</Link>
-          <Link to="/contacto" className="cta-btn" onClick={closeMenu}>Comenzar</Link>
+          <Link to="/producto" onClick={closeMenu}>{t('header.nav.product')}</Link>
+          <Link to="/servicios" onClick={closeMenu}>{t('header.nav.services')}</Link>
+          <Link to="/nosotros" onClick={closeMenu}>{t('header.nav.about')}</Link>
+          <Link to="/contacto" className="cta-btn" onClick={closeMenu}>{t('header.nav.contactCta')}</Link>
+          <div className="language-switcher">
+            <div className="language-segment" role="group" aria-label={t('languageSwitcher.label')}>
+              {['es', 'en', 'fr'].map((code) => (
+                <button
+                  key={code}
+                  type="button"
+                  className={`language-option ${language === code ? 'active' : ''}`}
+                  onClick={() => handleLanguageChange(code)}
+                  aria-pressed={language === code}
+                >
+                  {code.toUpperCase()}
+                </button>
+              ))}
+              <span className="language-segment-glow" aria-hidden="true"></span>
+            </div>
+          </div>
         </nav>
       </div>
     </header>

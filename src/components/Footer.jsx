@@ -1,31 +1,38 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
             <div className="logo">Moira Ordo</div>
-            <p>El sistema que decide cómo fluye el contenido.</p>
+            <p>{t('footer.tagline')}</p>
           </div>
           <div className="footer-links">
             <div className="footer-column">
-              <h4>Producto</h4>
-              <Link to="/producto">Características</Link>
-              <a href="#pricing">Precios</a>
-              <a href="#docs">Documentación</a>
+              <h4>{t('footer.columns.product')}</h4>
+              <Link to="/producto">{t('footer.links.features')}</Link>
+              <Link to="/servicios">{t('footer.links.docs')}</Link>
             </div>
             <div className="footer-column">
-              <h4>Compañía</h4>
-              <Link to="/nosotros">Sobre nosotros</Link>
-              <a href="#contacto">Contacto</a>
-              <a href="#blog">Blog</a>
+              <h4>{t('footer.columns.company')}</h4>
+              <Link to="/nosotros">{t('footer.links.about')}</Link>
+              <Link to="/contacto">{t('footer.links.contact')}</Link>
+            </div>
+            <div className="footer-column">
+              <h4>{t('footer.columns.legal')}</h4>
+              <Link to="/privacidad">{t('footer.links.privacy')}</Link>
+              <Link to="/aviso-legal">{t('footer.links.legal')}</Link>
+              <Link to="/cookies">{t('footer.links.cookies')}</Link>
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2026 Moira Ordo. Todos los derechos reservados.</p>
+          <p>{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>
