@@ -99,7 +99,7 @@ function Contacto() {
               <div className="contact-details">
                 <h3>{t('contacto.details.title')}</h3>
                 <p>
-                  <strong>{t('contacto.details.emailLabel')}:</strong> hola@moiraordo.com
+                  <strong>{t('contacto.details.emailLabel')}:</strong> info@moiraordo.es
                 </p>
                 <p>
                   <strong>{t('contacto.details.hoursLabel')}:</strong> {t('contacto.details.hours')}
