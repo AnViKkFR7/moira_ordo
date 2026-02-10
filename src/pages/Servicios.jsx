@@ -1,0 +1,141 @@
+function Servicios() {
+  return (
+    <>
+      {/* Product Hero */}
+      <section className="product-hero">
+        <div className="container">
+          <h1 className="product-hero-title">Creamos tu presencia digital</h1>
+          <p className="product-hero-subtitle">
+            Páginas web a medida que reflejan la esencia de tu proyecto.<br />
+            Sin plantillas. Sin improvisación. Solo soluciones pensadas para ti.
+          </p>
+        </div>
+      </section>
+
+      {/* Product Section */}
+      <section className="product-section" id="producto">
+        <div className="container">
+          <div className="product-content">
+            <div className="product-main">
+              <h3>Lo que hacemos</h3>
+              <p>
+                Desarrollamos sitios web profesionales con Moira Ordo en su núcleo. 
+                Cada proyecto es único, diseñado específicamente para tus necesidades 
+                y construido con la estabilidad que tu negocio merece.
+              </p>
+              <ul className="product-list">
+                <li>
+                  <strong>Páginas web a medida</strong> — Diseño y desarrollo personalizado 
+                  que se adapta exactamente a tu visión y objetivos.
+                </li>
+                <li>
+                  <strong>Atención personalizada</strong> — Acompañamiento continuo desde 
+                  la primera conversación hasta mucho después del lanzamiento.
+                </li>
+                <li>
+                  <strong>Gestión autónoma de contenido</strong> — Actualiza textos, imágenes 
+                  y productos sin depender de nadie. El diseño permanece intacto.
+                </li>
+                <li>
+                  <strong>Mantenimiento y soporte</strong> — Tu web siempre actualizada, 
+                  segura y funcionando sin interrupciones.
+                </li>
+                <li>
+                  <strong>Escalabilidad real</strong> — Tu sitio crece contigo. Añade 
+                  funcionalidades cuando las necesites, sin rehacer todo.
+                </li>
+              </ul>
+            </div>
+            
+            <div className="product-approach">
+              <h3>Nuestro enfoque</h3>
+              <div className="approach-steps">
+                <div className="approach-step">
+                  <span className="step-number">01</span>
+                  <div>
+                    <h4>Escuchamos</h4>
+                    <p>Entendemos tu proyecto, tu audiencia y tus objetivos reales.</p>
+                  </div>
+                </div>
+                <div className="approach-step">
+                  <span className="step-number">02</span>
+                  <div>
+                    <h4>Diseñamos</h4>
+                    <p>Creamos una estructura visual y funcional pensada para durar.</p>
+                  </div>
+                </div>
+                <div className="approach-step">
+                  <span className="step-number">03</span>
+                  <div>
+                    <h4>Construimos</h4>
+                    <p>Desarrollamos con código limpio y sistemas robustos.</p>
+                  </div>
+                </div>
+                <div className="approach-step">
+                  <span className="step-number">04</span>
+                  <div>
+                    <h4>Acompañamos</h4>
+                    <p>Te enseñamos a gestionar tu contenido con total autonomía.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="features" id="caracteristicas">
+        <div className="container">
+          <h2 className="section-title">Características que importan</h2>
+          <p className="section-subtitle">
+            Tecnología invisible. Resultados visibles.
+          </p>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon">○</div>
+              <h3>Diseño estable</h3>
+              <p>Tu identidad visual permanece consistente. El cliente gestiona contenido sin afectar el diseño.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">△</div>
+              <h3>Contenido dinámico</h3>
+              <p>Actualiza textos, imágenes y productos sin tocar código. El orden se mantiene siempre.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">□</div>
+              <h3>Infraestructura invisible</h3>
+              <p>La tecnología trabaja en segundo plano. Solo percibes la estabilidad.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">◇</div>
+              <h3>Rendimiento optimizado</h3>
+              <p>Carga rápida, experiencia fluida. Tu web funciona como debe funcionar.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">⬡</div>
+              <h3>Responsive por naturaleza</h3>
+              <p>Perfecta en cualquier dispositivo. Desde móviles hasta pantallas grandes.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">⬢</div>
+              <h3>SEO integrado</h3>
+              <p>Construido para ser encontrado. Estructura semántica y optimización desde el día uno.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <div className="container">
+          <h2>¿Listo para comenzar tu proyecto?</h2>
+          <p>Hablemos de cómo podemos ayudarte a crear tu presencia digital.</p>
+          <button className="btn-primary large">Contactar ahora</button>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default Servicios
