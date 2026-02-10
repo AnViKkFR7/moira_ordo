@@ -2441,6 +2441,12 @@ html {
     flex-direction: column;
     gap: var(--spacing-md);
   }
+
+  .admin-feature-content,
+  .admin-feature-visual {
+    width: 100%;
+    flex: none;
+  }
   
   .visual-placeholder {
     height: 250px;
@@ -2478,4 +2484,51 @@ html {
   background-color: var(--color-accent);
   margin: 2rem auto 0;
   opacity: 0.5;
+}
+
+/* Responsive Improvements for Services Page */
+@media (max-width: 968px) {
+  .product-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-content {
+    text-align: left;
+  }
+
+  .product-content .product-list,
+  .product-content .product-main p,
+  .product-content .approach-step p {
+    text-align: left;
+  }
+
+  .approach-step {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .feature-card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Responsive adjustments for Admin Section */
+@media (max-width: 768px) {
+  .admin-intro {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .admin-description-highlight {
+    padding: var(--spacing-md);
+    font-size: 1rem;
+    margin-top: var(--spacing-md);
+  }
 }
