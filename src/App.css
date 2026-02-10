@@ -383,14 +383,14 @@ body {
 }
 
 .btn-secondary {
-  background-color: white;
+  background-color: transparent;
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
   z-index: 1;
 }
 
 .btn-secondary::before {
-  background: var(--color-primary);
+  content: none;
 }
 
 .btn-secondary:hover {
