@@ -1,4 +1,11 @@
+import { Link } from 'react-router-dom'
+import { useLanguage } from '../i18n/LanguageContext'
+
 function Nosotros() {
+  const { t } = useLanguage()
+  const values = t('nosotros.values.items')
+  const methodItems = t('nosotros.method.items')
+
   return (
     <>
       {/* About Us Section */}
@@ -6,42 +13,27 @@ function Nosotros() {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h2>Quiénes somos</h2>
+              <h2>{t('nosotros.about.title')}</h2>
               <p className="about-intro">
-                Somos un equipo especializado en crear experiencias digitales duraderas. 
-                No perseguimos tendencias. Construimos fundamentos.
+                {t('nosotros.about.intro')}
               </p>
               <p>
-                Nacimos de la necesidad de encontrar un punto medio entre el caos de los 
-                constructores visuales y la rigidez de las soluciones empresariales. 
-                Creímos que debía existir algo mejor: una forma de crear webs profesionales 
-                donde el diseño permanece estable y el contenido fluye con orden.
+                {t('nosotros.about.paragraphOne')}
               </p>
               <p>
-                Moira Ordo es nuestra respuesta. Un sistema que respeta el trabajo del 
-                diseñador, empodera al desarrollador y libera al cliente.
+                {t('nosotros.about.paragraphTwo')}
               </p>
             </div>
             
             <div className="about-values">
-              <h3>Nuestros principios</h3>
+              <h3>{t('nosotros.values.title')}</h3>
               <div className="values-list">
-                <div className="value-item">
-                  <h4>Claridad</h4>
-                  <p>Sin jerga técnica innecesaria. Hablamos tu idioma.</p>
-                </div>
-                <div className="value-item">
-                  <h4>Estabilidad</h4>
-                  <p>Construimos para que dure. No para que impresione una temporada.</p>
-                </div>
-                <div className="value-item">
-                  <h4>Honestidad</h4>
-                  <p>Sin promesas imposibles. Solo soluciones reales a problemas reales.</p>
-                </div>
-                <div className="value-item">
-                  <h4>Compromiso</h4>
-                  <p>Tu proyecto es nuestro proyecto. Estamos contigo desde el día uno.</p>
-                </div>
+                {values.map((value) => (
+                  <div key={value.title} className="value-item">
+                    <h4>{value.title}</h4>
+                    <p>{value.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -49,14 +41,12 @@ function Nosotros() {
           <div className="about-philosophy">
             <blockquote className="philosophy-quote">
               <p>
-                "No creamos el mundo. Decidimos cómo fluye."
+                {t('nosotros.philosophy.quote')}
               </p>
-              <cite>— Filosofía Moira Ordo</cite>
+              <cite>{t('nosotros.philosophy.cite')}</cite>
             </blockquote>
             <p className="philosophy-text">
-              Esta es nuestra guía. No sobreactuamos. No complicamos lo simple. 
-              Creamos sistemas que funcionan en silencio y permiten que tu contenido 
-              y tu mensaje sean los protagonistas.
+              {t('nosotros.philosophy.text')}
             </p>
           </div>
         </div>
@@ -65,9 +55,9 @@ function Nosotros() {
       {/* Founders Section */}
       <section className="founders-section">
         <div className="container">
-          <h2 className="section-title">Nuestros Fundadores</h2>
+          <h2 className="section-title">{t('nosotros.founders.title')}</h2>
           <p className="section-subtitle">
-            Un equipo unido con amplia experiencia tecnológica.
+            {t('nosotros.founders.subtitle')}
           </p>
           <div className="founders-grid">
             <div className="founder-card">
@@ -76,12 +66,12 @@ function Nosotros() {
               </div>
               <div className="founder-info">
                 <h3>Aaron Garcia</h3>
-                <p className="founder-role">Software Engineer</p>
+                <p className="founder-role">{t('nosotros.founders.aaron.role')}</p>
                 <div className="founder-stats">
-                  <span>+5 años de experiencia</span>
+                  <span>{t('nosotros.founders.aaron.stats')}</span>
                 </div>
                 <p className="founder-desc">
-                  Arquitectura de software y soluciones robustas.
+                  {t('nosotros.founders.aaron.description')}
                 </p>
                 <a href="https://www.linkedin.com/in/aaron-garcia-84088a154/" target="_blank" rel="noopener noreferrer" className="founder-social">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -97,12 +87,12 @@ function Nosotros() {
               </div>
               <div className="founder-info">
                 <h3>Joselyn Ninahuaman Calcina</h3>
-                <p className="founder-role">Developer Full Stack</p>
+                <p className="founder-role">{t('nosotros.founders.joselyn.role')}</p>
                 <div className="founder-stats">
-                  <span>+2 años de experiencia</span>
+                  <span>{t('nosotros.founders.joselyn.stats')}</span>
                 </div>
                 <p className="founder-desc">
-                  Desarrollo integral de aplicaciones web modernas.
+                  {t('nosotros.founders.joselyn.description')}
                 </p>
                 <a href="https://www.linkedin.com/in/joselyn-ninahuaman-calcina-/" target="_blank" rel="noopener noreferrer" className="founder-social">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -118,39 +108,17 @@ function Nosotros() {
       {/* Team Section */}
       <section className="team-section">
         <div className="container">
-          <h2 className="section-title">Nuestro método</h2>
+          <h2 className="section-title">{t('nosotros.method.title')}</h2>
           <p className="section-subtitle">
-            Trabajamos de forma transparente, clara y siempre enfocados en tus objetivos.
+            {t('nosotros.method.subtitle')}
           </p>
           <div className="method-grid">
-            <div className="method-card">
-              <h3>Descubrimiento</h3>
-              <p>
-                Comenzamos por entender tu negocio, tu audiencia y tus metas. 
-                Cada proyecto es diferente y merece atención única.
-              </p>
-            </div>
-            <div className="method-card">
-              <h3>Estrategia</h3>
-              <p>
-                Diseñamos la arquitectura del sitio pensando en el futuro. 
-                Estructura que perdura, contenido que evoluciona.
-              </p>
-            </div>
-            <div className="method-card">
-              <h3>Desarrollo</h3>
-              <p>
-                Construimos con tecnología sólida y código limpio. 
-                Sin atajos, sin compromisos técnicos.
-              </p>
-            </div>
-            <div className="method-card">
-              <h3>Lanzamiento</h3>
-              <p>
-                Entregamos tu proyecto y te enseñamos a gestionarlo. 
-                Quedamos contigo para cualquier necesidad.
-              </p>
-            </div>
+            {methodItems.map((item) => (
+              <div key={item.title} className="method-card">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -158,9 +126,9 @@ function Nosotros() {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
-          <h2>Construyamos algo juntos</h2>
-          <p>Estamos listos para escuchar tu proyecto y hacerlo realidad.</p>
-          <button className="btn-primary large">Hablemos</button>
+          <h2>{t('nosotros.cta.title')}</h2>
+          <p>{t('nosotros.cta.subtitle')}</p>
+          <Link to="/contacto" className="btn-primary large">{t('nosotros.cta.button')}</Link>
         </div>
       </section>
     </>

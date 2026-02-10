@@ -1,35 +1,79 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import '../App.css'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function Contacto() {
-  const handleSubmit = (e) => {
+  const { t, language } = useLanguage()
+  const benefits = t('contacto.why.benefits')
+  const projectTypes = t('contacto.form.projectTypes')
+  const [status, setStatus] = useState('idle')
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Aquí puedes agregar la lógica para enviar el formulario
-    console.log('Formulario enviado')
+    setStatus('sending')
+
+    const formData = new FormData(e.target)
+    const projectTypeValue = formData.get('projectType')?.toString() ?? ''
+    const projectTypeLabel =
+      projectTypes.find((option) => option.value === projectTypeValue)?.label ?? projectTypeValue
+
+    const payload = {
+      name: formData.get('name')?.toString() ?? '',
+      email: formData.get('email')?.toString() ?? '',
+      phone: formData.get('phone')?.toString() ?? '',
+      company: formData.get('company')?.toString() ?? '',
+      projectType: {
+        value: projectTypeValue,
+        label: projectTypeLabel
+      },
+      message: formData.get('message')?.toString() ?? '',
+      language
+    }
+
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+    const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+    if (!supabaseUrl || !supabaseKey) {
+      console.error('Missing Supabase configuration.')
+      setStatus('error')
+      return
+    }
+
+    try {
+      const response = await fetch(`${supabaseUrl}/functions/v1/moira-ordo-contact-form`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${supabaseKey}`,
+          apikey: supabaseKey
+        },
+        body: JSON.stringify(payload)
+      })
+
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error('Contact form submission failed.', errorText)
+        setStatus('error')
+        return
+      }
+
+      console.log('Formulario enviado')
+      e.target.reset()
+      setStatus('success')
+    } catch (error) {
+      console.error('Contact form submission failed.', error)
+      setStatus('error')
+    }
   }
 
   return (
-    <div className="landing">
-      {/* Header */}
-      <header className="header">
-        <div className="container">
-          <Link to="/" className="logo">
-            <img src="/logo2.png" alt="Moira Ordo" className="logo-img" />
-          </Link>
-          <nav className="nav">
-            <Link to="/producto">Producto</Link>
-            <Link to="/nosotros">Nosotros</Link>
-            <Link to="/contacto" className="cta-btn">Contacto</Link>
-          </nav>
-        </div>
-      </header>
-
+    <>
       {/* Contact Hero */}
       <section className="contact-hero">
         <div className="container">
-          <h1 className="contact-title">Comencemos tu proyecto</h1>
+          <h1 className="contact-title">{t('contacto.hero.title')}</h1>
           <p className="contact-subtitle">
-            Cuéntanos qué necesitas. Te respondemos en menos de 24 horas.
+            {t('contacto.hero.subtitle')}
           </p>
         </div>
       </section>
@@ -39,45 +83,26 @@ function Contacto() {
         <div className="container">
           <div className="contact-content">
             <div className="contact-info">
-              <h2>¿Por qué contactarnos?</h2>
+              <h2>{t('contacto.why.title')}</h2>
               <ul className="contact-benefits">
-                <li>
-                  <span className="benefit-icon">✓</span>
-                  <div>
-                    <strong>Consulta gratuita</strong>
-                    <p>Primera conversación sin compromiso</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="benefit-icon">✓</span>
-                  <div>
-                    <strong>Respuesta rápida</strong>
-                    <p>Te contestamos en menos de 24 horas</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="benefit-icon">✓</span>
-                  <div>
-                    <strong>Atención personalizada</strong>
-                    <p>Hablamos directamente contigo, sin intermediarios</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="benefit-icon">✓</span>
-                  <div>
-                    <strong>Presupuesto a medida</strong>
-                    <p>Soluciones adaptadas a tu proyecto y presupuesto</p>
-                  </div>
-                </li>
+                {benefits.map((benefit) => (
+                  <li key={benefit.title}>
+                    <span className="benefit-icon">✓</span>
+                    <div>
+                      <strong>{benefit.title}</strong>
+                      <p>{benefit.description}</p>
+                    </div>
+                  </li>
+                ))}
               </ul>
 
               <div className="contact-details">
-                <h3>Otras formas de contacto</h3>
+                <h3>{t('contacto.details.title')}</h3>
                 <p>
-                  <strong>Email:</strong> hola@moiraordo.com
+                  <strong>{t('contacto.details.emailLabel')}:</strong> hola@moiraordo.com
                 </p>
                 <p>
-                  <strong>Horario:</strong> Lun - Vie, 9:00 - 18:00
+                  <strong>{t('contacto.details.hoursLabel')}:</strong> {t('contacto.details.hours')}
                 </p>
               </div>
             </div>
@@ -85,68 +110,67 @@ function Contacto() {
             <div className="contact-form-wrapper">
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">Nombre completo *</label>
+                  <label htmlFor="name">{t('contacto.form.nameLabel')}</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    placeholder="Tu nombre"
+                    placeholder={t('contacto.form.namePlaceholder')}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email *</label>
+                  <label htmlFor="email">{t('contacto.form.emailLabel')}</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
-                    placeholder="tu@email.com"
+                    placeholder={t('contacto.form.emailPlaceholder')}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="phone">Teléfono</label>
+                  <label htmlFor="phone">{t('contacto.form.phoneLabel')}</label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    placeholder="+34 600 000 000"
+                    placeholder={t('contacto.form.phonePlaceholder')}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="company">Empresa / Proyecto</label>
+                  <label htmlFor="company">{t('contacto.form.companyLabel')}</label>
                   <input
                     type="text"
                     id="company"
                     name="company"
-                    placeholder="Nombre de tu empresa o proyecto"
+                    placeholder={t('contacto.form.companyPlaceholder')}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="projectType">Tipo de proyecto *</label>
+                  <label htmlFor="projectType">{t('contacto.form.projectTypeLabel')}</label>
                   <select id="projectType" name="projectType" required>
-                    <option value="">Selecciona una opción</option>
-                    <option value="nueva-web">Nueva página web</option>
-                    <option value="rediseno">Rediseño de web existente</option>
-                    <option value="ecommerce">Tienda online</option>
-                    <option value="corporativa">Web corporativa</option>
-                    <option value="landing">Landing page</option>
-                    <option value="otro">Otro</option>
+                    <option value="">{t('contacto.form.projectTypePlaceholder')}</option>
+                    {projectTypes.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Cuéntanos tu proyecto *</label>
+                  <label htmlFor="message">{t('contacto.form.messageLabel')}</label>
                   <textarea
                     id="message"
                     name="message"
                     rows="6"
                     required
-                    placeholder="Describe tu proyecto, tus objetivos y cualquier detalle que consideres importante..."
+                    placeholder={t('contacto.form.messagePlaceholder')}
                   ></textarea>
                 </div>
 
@@ -154,24 +178,30 @@ function Contacto() {
                   <label className="checkbox-label">
                     <input type="checkbox" required />
                     <span>
-                      He leído y acepto la política de privacidad *
+                      {t('contacto.form.privacyLabel')}
                     </span>
                   </label>
                 </div>
 
                 <button type="submit" className="btn-primary large">
-                  Enviar solicitud
+                  {t('contacto.form.submit')}
                 </button>
 
+                {status !== 'idle' && (
+                  <p className={`form-status ${status}`} aria-live="polite">
+                    {t(`contacto.form.status.${status}`)}
+                  </p>
+                )}
+
                 <p className="form-note">
-                  * Campos obligatorios. Respetamos tu privacidad y no compartimos tu información.
+                  {t('contacto.form.note')}
                 </p>
               </form>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }
 
