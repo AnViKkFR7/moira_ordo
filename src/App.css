@@ -43,6 +43,10 @@ body {
   overflow-x: hidden;
 }
 
+.main-content {
+  min-height: 80vh;
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -257,6 +261,9 @@ body {
 /* Buttons */
 .btn-primary,
 .btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
   padding: 0.875rem 2rem;
   font-size: 1rem;
   font-weight: 600;

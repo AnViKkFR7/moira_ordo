@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Nosotros() {
   return (
     <>
@@ -160,7 +162,7 @@ function Nosotros() {
         <div className="container">
           <h2>Construyamos algo juntos</h2>
           <p>Estamos listos para escuchar tu proyecto y hacerlo realidad.</p>
-          <button className="btn-primary large">Hablemos</button>
+          <Link to="/contacto" className="btn-primary large">Hablemos</Link>
         </div>
       </section>
     </>

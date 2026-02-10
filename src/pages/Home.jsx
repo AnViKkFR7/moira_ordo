@@ -10,25 +10,19 @@ function Home() {
     {
       id: 1,
       image: '/Captura de pantalla 2026-02-07 113628.png',
-      title: 'Proyecto 1',
+      title: 'Empresa inmobiliaria',
       description: 'Web corporativa minimalista'
     },
     {
       id: 2,
       image: '/Captura de pantalla 2026-02-07 113822.png',
-      title: 'Proyecto 2',
+      title: 'Propiedades destacadas',
       description: 'Propiedades exclusivas en las mejores zonas de Barcelona y la Costa Dorada'
     },
     {
       id: 3,
-      image: '/Captura de pantalla 2026-02-07 113831.png',
-      title: 'Proyecto 3',
-      description: 'Propiedades destacadas'
-    },
-    {
-      id: 4,
       image: '/Captura de pantalla 2026-02-07 113909.png',
-      title: 'Movil',
+      title: 'Adaptada a móviles',
       description: 'Responsive'
     }
   ]
