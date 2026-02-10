@@ -76,7 +76,7 @@ function Nosotros() {
               </div>
               <div className="founder-info">
                 <h3>Aaron Garcia</h3>
-                <p className="founder-role">Ingeniero Informático</p>
+                <p className="founder-role">Software Engineer</p>
                 <div className="founder-stats">
                   <span>+5 años de experiencia</span>
                 </div>
@@ -97,7 +97,7 @@ function Nosotros() {
               </div>
               <div className="founder-info">
                 <h3>Joselyn Ninahuaman Calcina</h3>
-                <p className="founder-role">Software Developer Full Stack</p>
+                <p className="founder-role">Developer Full Stack</p>
                 <div className="founder-stats">
                   <span>+2 años de experiencia</span>
                 </div>

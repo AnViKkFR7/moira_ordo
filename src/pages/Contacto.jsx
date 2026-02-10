@@ -171,33 +171,6 @@ function Contacto() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand">
-              <div className="logo">Moira Ordo</div>
-              <p>El sistema que decide cómo fluye el contenido.</p>
-            </div>
-            <div className="footer-links">
-              <div className="footer-column">
-                <h4>Producto</h4>
-                <Link to="/producto">Producto</Link>
-                <Link to="/nosotros">Nosotros</Link>
-              </div>
-              <div className="footer-column">
-                <h4>Legal</h4>
-                <a href="#privacy">Privacidad</a>
-                <a href="#terms">Términos</a>
-              </div>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>© 2026 Moira Ordo. Todos los derechos reservados.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
