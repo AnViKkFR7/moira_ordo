@@ -426,7 +426,7 @@ export const translations = {
         addressLabel: 'Domicilio',
         address: 'Vilanova i la Geltrú, España',
         emailLabel: 'Email',
-        email: 'gasa.aaron@gmail.com',
+        email: 'info@moiraordo.es',
         serviceLabel: 'Actividad',
         service: 'Diseño, desarrollo web y consultoría digital'
       },
@@ -440,7 +440,7 @@ export const translations = {
             paragraphs: [
               'Titular: Aaron García Sánchez (NIF 53321515V).',
               'Domicilio: Vilanova i la Geltrú, España.',
-              'Email de contacto: gasa.aaron@gmail.com.'
+              'Email de contacto: info@moiraordo.es.'
             ]
           },
           {
@@ -480,7 +480,7 @@ export const translations = {
           {
             title: 'Derechos',
             paragraphs: [
-              'Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando un email a gasa.aaron@gmail.com.',
+              'Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando un email a info@moiraordo.es.',
               'Si consideras que tu solicitud no ha sido atendida correctamente, puedes reclamar ante la Agencia Española de Protección de Datos (AEPD).'
             ]
           },
@@ -502,7 +502,7 @@ export const translations = {
             paragraphs: [
               'Aaron García Sánchez (NIF 53321515V).',
               'Domicilio: Vilanova i la Geltrú, España.',
-              'Email: gasa.aaron@gmail.com.'
+              'Email: info@moiraordo.es.'
             ]
           },
           {
@@ -997,7 +997,7 @@ export const translations = {
         addressLabel: 'Address',
         address: 'Vilanova i la Geltrú, Spain',
         emailLabel: 'Email',
-        email: 'gasa.aaron@gmail.com',
+        email: 'info@moiraordo.es',
         serviceLabel: 'Service',
         service: 'Web design, web development, and digital consulting'
       },
@@ -1011,7 +1011,7 @@ export const translations = {
             paragraphs: [
               'Owner: Aaron García Sánchez (Tax ID 53321515V).',
               'Address: Vilanova i la Geltrú, Spain.',
-              'Contact email: gasa.aaron@gmail.com.'
+              'Contact email: info@moiraordo.es.'
             ]
           },
           {
@@ -1051,7 +1051,7 @@ export const translations = {
           {
             title: 'Your rights',
             paragraphs: [
-              'You can exercise your rights of access, rectification, erasure, objection, restriction, and portability by emailing gasa.aaron@gmail.com.',
+              'You can exercise your rights of access, rectification, erasure, objection, restriction, and portability by emailing info@moiraordo.es.',
               'If you believe your request has not been properly handled, you may lodge a complaint with the Spanish Data Protection Authority (AEPD).'
             ]
           },
@@ -1073,7 +1073,7 @@ export const translations = {
             paragraphs: [
               'Aaron García Sánchez (Tax ID 53321515V).',
               'Address: Vilanova i la Geltrú, Spain.',
-              'Email: gasa.aaron@gmail.com.'
+              'Email: info@moiraordo.es.'
             ]
           },
           {
@@ -1568,7 +1568,7 @@ export const translations = {
         addressLabel: 'Adresse',
         address: 'Vilanova i la Geltrú, Espagne',
         emailLabel: 'Email',
-        email: 'gasa.aaron@gmail.com',
+        email: 'info@moiraordo.es',
         serviceLabel: 'Activite',
         service: 'Conception web, developpement web et conseil digital'
       },
@@ -1582,7 +1582,7 @@ export const translations = {
             paragraphs: [
               'Titulaire : Aaron García Sánchez (NIF 53321515V).',
               'Adresse : Vilanova i la Geltrú, Espagne.',
-              'Email de contact : gasa.aaron@gmail.com.'
+              'Email de contact : info@moiraordo.es.'
             ]
           },
           {
@@ -1622,7 +1622,7 @@ export const translations = {
           {
             title: 'Droits',
             paragraphs: [
-              'Vous pouvez exercer vos droits d\'acces, rectification, suppression, opposition, limitation et portabilite par email a gasa.aaron@gmail.com.',
+              'Vous pouvez exercer vos droits d\'acces, rectification, suppression, opposition, limitation et portabilite par email a info@moiraordo.es.',
               'Si vous estimez que votre demande n\'est pas correctement traitee, vous pouvez deposer une reclamation aupres de l\'AEPD.'
             ]
           },
@@ -1644,7 +1644,7 @@ export const translations = {
             paragraphs: [
               'Aaron García Sánchez (NIF 53321515V).',
               'Adresse : Vilanova i la Geltrú, Espagne.',
-              'Email : gasa.aaron@gmail.com.'
+              'Email : info@moiraordo.es.'
             ]
           },
           {
