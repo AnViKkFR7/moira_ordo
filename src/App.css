@@ -1,3 +1,65 @@
+/* Youtube Popup Styles */
+.youtube-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.youtube-popup-content {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  position: relative;
+  max-width: 95vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.youtube-popup-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+.youtube-popup-video-wrapper {
+  width: 560px;
+  max-width: 80vw;
+  aspect-ratio: 16/9;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .youtube-popup-video-wrapper {
+    width: 100vw;
+    max-width: 98vw;
+    min-width: 0;
+    aspect-ratio: 16/9;
+  }
+  .youtube-popup-content {
+    padding: 0.5rem;
+  }
+}
 /* Modern Landing Page - Moira Ordo */
 
 * {
