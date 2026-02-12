@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import YoutubePopup from '../components/YoutubePopup'
 import { useLanguage } from '../i18n/LanguageContext'
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [showYoutube, setShowYoutube] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
   const { t } = useLanguage()
@@ -74,7 +76,18 @@ function Home() {
           </p>
           <div className="hero-actions">
             <Link to="/contacto" className="btn-primary">{t('home.hero.primaryCta')}</Link>
-            <button className="btn-secondary">{t('home.hero.secondaryCta')}</button>
+            <button
+              className="btn-secondary"
+              type="button"
+              onClick={() => setShowYoutube(true)}
+            >
+              {t('home.hero.secondaryCta')}
+            </button>
+            <YoutubePopup
+              videoId="8X5Bi9ina1Q"
+              open={showYoutube}
+              onClose={() => setShowYoutube(false)}
+            />
           </div>
         </div>
       </section>
