@@ -6,6 +6,7 @@ import { useLanguage } from '../i18n/LanguageContext'
 function Home() {
   const [showYoutube, setShowYoutube] = useState(false)
   const [activeNode, setActiveNode] = useState(null)
+  const [hoveredMobile, setHoveredMobile] = useState(null)
   const { t } = useLanguage()
   
   const projects = t('home.projects')
@@ -138,7 +139,9 @@ function Home() {
                     </div>
                     <div className="browser-screen">
                       {project.imgDesktop ? (
-                        <img src={project.imgDesktop} alt={`${project.title} desktop`} />
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="browser-screen-link">
+                          <img src={project.imgDesktop} alt={`${project.title} desktop`} />
+                        </a>
                       ) : (
                         <div className="screen-placeholder">
                           <span>Captura desktop</span>
@@ -147,7 +150,11 @@ function Home() {
                       )}
                     </div>
                   </div>
-                  <div className="project-mobile">
+                  <div
+                    className="project-mobile"
+                    onMouseEnter={() => project.imgMobile && setHoveredMobile({ src: project.imgMobile, title: project.title })}
+                    onMouseLeave={() => setHoveredMobile(null)}
+                  >
                     <div className="mobile-notch"></div>
                     <div className="mobile-screen">
                       {project.imgMobile ? (
@@ -184,7 +191,17 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Mobile preview popup */}
+      {hoveredMobile && (
+        <div className="mobile-preview-popup">
+          <div className="mobile-preview-frame">
+            <div className="mobile-preview-notch"></div>
+            <div className="mobile-preview-screen">
+              <img src={hoveredMobile.src} alt={`${hoveredMobile.title} responsive`} />
+            </div>
+          </div>
+        </div>
+      )}
       <section className="cta-section" id="contacto">
         <div className="container">
           <h2>{t('home.cta.title')}</h2>

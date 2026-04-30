@@ -96,7 +96,7 @@ export const translations = {
         {
           id: 1,
           category: 'Inmobiliaria',
-          title: 'www.regiamare',
+          title: 'regiamare',
           description: 'Web corporativa minimalista para una agencia inmobiliaria. Gestión autónoma de propiedades, formularios de contacto y presencia digital sólida.',
           tags: ['Propiedades', 'CMS', 'Responsive', 'Formulario'],
           imgDesktop: '/projectes/landingRegiamare.png',
@@ -111,7 +111,7 @@ export const translations = {
           tags: ['Portfolio', 'Servicios', 'SEO', 'Contacto'],
           imgDesktop: '/projectes/navaglilanding.png',
           imgMobile: '/projectes/navagli movil.png',
-          url: '#'
+          url: 'https://www.navagli.com'
         },
         {
           id: 3,
@@ -121,7 +121,7 @@ export const translations = {
           tags: ['Juego interactivo', 'Tiempo real', 'Eventos', 'Música'],
           imgDesktop: '/projectes/Landing musibingo.png',
           imgMobile: '/projectes/movilMusibingo.png',
-          url: '#'
+          url: 'https://musibingo.com'
         }
       ],
       cta: {
@@ -703,7 +703,7 @@ export const translations = {
           tags: ['Portfolio', 'Services', 'SEO', 'Contact'],
           imgDesktop: '/projectes/navaglilanding.png',
           imgMobile: '/projectes/navagli movil.png',
-          url: '#'
+          url: 'https://www.navagli.com'
         },
         {
           id: 3,
@@ -713,7 +713,7 @@ export const translations = {
           tags: ['Interactive game', 'Real-time', 'Events', 'Music'],
           imgDesktop: '/projectes/Landing musibingo.png',
           imgMobile: '/projectes/movilMusibingo.png',
-          url: '#'
+          url: 'https://musibingo.com'
         }
       ],
       cta: {
@@ -1292,7 +1292,7 @@ export const translations = {
           tags: ['Portfolio', 'Services', 'SEO', 'Contact'],
           imgDesktop: '/projectes/navaglilanding.png',
           imgMobile: '/projectes/navagli movil.png',
-          url: '#'
+          url: 'https://www.navagli.com'
         },
         {
           id: 3,
@@ -1302,7 +1302,7 @@ export const translations = {
           tags: ['Jeu interactif', 'Temps réel', 'Événements', 'Musique'],
           imgDesktop: '/projectes/Landing musibingo.png',
           imgMobile: '/projectes/movilMusibingo.png',
-          url: '#'
+          url: 'https://musibingo.com'
         }
       ],
       cta: {
