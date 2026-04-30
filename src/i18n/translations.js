@@ -89,30 +89,39 @@ export const translations = {
       },
       projectsSection: {
         title: 'Nuestros proyectos',
-        subtitle: 'Soluciones digitales diseñadas con precisión y ejecutadas con excelencia',
-        prevAria: 'Anterior',
-        nextAria: 'Siguiente',
-        goToAria: 'Ir a proyecto {index}'
+        subtitle: 'Cada web es una solución única. Diseñada, construida y entregada con orden.',
+        visitLabel: 'Ver proyecto ↗'
       },
       projects: [
         {
           id: 1,
-          image: '/Captura de pantalla 2026-02-07 113628.png',
+          category: 'Inmobiliaria',
           title: 'Empresa inmobiliaria',
-          description: 'Web corporativa minimalista'
+          description: 'Web corporativa minimalista para una agencia inmobiliaria. Gestión autónoma de propiedades, formularios de contacto y presencia digital sólida.',
+          tags: ['Propiedades', 'CMS', 'Responsive', 'Formulario'],
+          imgDesktop: '/project-inmobiliaria-desktop.png',
+          imgMobile: '/project-inmobiliaria-mobile.png',
+          url: '#'
         },
         {
           id: 2,
-          image: '/Captura de pantalla 2026-02-07 113822.png',
-          title: 'Propiedades destacadas',
-          description:
-            'Propiedades exclusivas en las mejores zonas de Barcelona y la Costa Dorada'
+          category: 'Reformas',
+          title: 'Empresa de reformas',
+          description: 'Sitio profesional para empresa de reformas y construcción. Portfolio de trabajos, servicios detallados y captación de clientes potenciales.',
+          tags: ['Portfolio', 'Servicios', 'SEO', 'Contacto'],
+          imgDesktop: '/project-reformas-desktop.png',
+          imgMobile: '/project-reformas-mobile.png',
+          url: '#'
         },
         {
           id: 3,
-          image: '/Captura de pantalla 2026-02-07 113909.png',
-          title: 'Adaptada a móviles',
-          description: 'Responsive'
+          category: 'Entretenimiento',
+          title: 'Bingo Musical',
+          description: 'Aplicación web interactiva para jugar al bingo con canciones. Dinámica, divertida y lista para usar en eventos, fiestas y celebraciones.',
+          tags: ['Juego interactivo', 'Tiempo real', 'Eventos', 'Música'],
+          imgDesktop: '/project-bingo-desktop.png',
+          imgMobile: '/project-bingo-mobile.png',
+          url: '#'
         }
       ],
       cta: {
@@ -672,29 +681,39 @@ export const translations = {
       },
       projectsSection: {
         title: 'Our projects',
-        subtitle: 'Digital solutions designed with precision and executed with excellence',
-        prevAria: 'Previous',
-        nextAria: 'Next',
-        goToAria: 'Go to project {index}'
+        subtitle: 'Every website is a unique solution. Designed, built and delivered with order.',
+        visitLabel: 'View project ↗'
       },
       projects: [
         {
           id: 1,
-          image: '/Captura de pantalla 2026-02-07 113628.png',
+          category: 'Real Estate',
           title: 'Real estate company',
-          description: 'Minimal corporate website'
+          description: 'Minimalist corporate website for a real estate agency. Autonomous property management, contact forms and solid digital presence.',
+          tags: ['Properties', 'CMS', 'Responsive', 'Form'],
+          imgDesktop: '/project-inmobiliaria-desktop.png',
+          imgMobile: '/project-inmobiliaria-mobile.png',
+          url: '#'
         },
         {
           id: 2,
-          image: '/Captura de pantalla 2026-02-07 113822.png',
-          title: 'Featured properties',
-          description: 'Exclusive properties in the best areas of Barcelona and Costa Dorada'
+          category: 'Construction',
+          title: 'Renovation company',
+          description: 'Professional site for a construction and renovation company. Work portfolio, detailed services and lead generation.',
+          tags: ['Portfolio', 'Services', 'SEO', 'Contact'],
+          imgDesktop: '/project-reformas-desktop.png',
+          imgMobile: '/project-reformas-mobile.png',
+          url: '#'
         },
         {
           id: 3,
-          image: '/Captura de pantalla 2026-02-07 113909.png',
-          title: 'Mobile-ready',
-          description: 'Responsive'
+          category: 'Entertainment',
+          title: 'Musical Bingo',
+          description: 'Interactive web app to play bingo with songs. Dynamic, fun and ready to use at events, parties and celebrations.',
+          tags: ['Interactive game', 'Real-time', 'Events', 'Music'],
+          imgDesktop: '/project-bingo-desktop.png',
+          imgMobile: '/project-bingo-mobile.png',
+          url: '#'
         }
       ],
       cta: {
@@ -1251,29 +1270,39 @@ export const translations = {
       },
       projectsSection: {
         title: 'Nos projets',
-        subtitle: 'Des solutions digitales concues avec precision et executees avec excellence',
-        prevAria: 'Precedent',
-        nextAria: 'Suivant',
-        goToAria: 'Aller au projet {index}'
+        subtitle: 'Chaque site est une solution unique. Conçue, construite et livrée avec ordre.',
+        visitLabel: 'Voir le projet ↗'
       },
       projects: [
         {
           id: 1,
-          image: '/Captura de pantalla 2026-02-07 113628.png',
-          title: 'Entreprise immobiliere',
-          description: 'Site corporate minimaliste'
+          category: 'Immobilier',
+          title: 'Agence immobilière',
+          description: 'Site corporate minimaliste pour une agence immobilière. Gestion autonome des biens, formulaires de contact et présence digitale solide.',
+          tags: ['Biens', 'CMS', 'Responsive', 'Formulaire'],
+          imgDesktop: '/project-inmobiliaria-desktop.png',
+          imgMobile: '/project-inmobiliaria-mobile.png',
+          url: '#'
         },
         {
           id: 2,
-          image: '/Captura de pantalla 2026-02-07 113822.png',
-          title: 'Biens en vedette',
-          description: 'Biens exclusifs dans les meilleures zones de Barcelone et de la Costa Dorada'
+          category: 'Construction',
+          title: 'Entreprise de rénovation',
+          description: 'Site professionnel pour une entreprise de rénovation. Portfolio de réalisations, services détaillés et génération de prospects.',
+          tags: ['Portfolio', 'Services', 'SEO', 'Contact'],
+          imgDesktop: '/project-reformas-desktop.png',
+          imgMobile: '/project-reformas-mobile.png',
+          url: '#'
         },
         {
           id: 3,
-          image: '/Captura de pantalla 2026-02-07 113909.png',
-          title: 'Adapte aux mobiles',
-          description: 'Responsive'
+          category: 'Divertissement',
+          title: 'Bingo Musical',
+          description: 'Application web interactive pour jouer au bingo avec des chansons. Dynamique, amusante et prête à l\'emploi pour événements et fêtes.',
+          tags: ['Jeu interactif', 'Temps réel', 'Événements', 'Musique'],
+          imgDesktop: '/project-bingo-desktop.png',
+          imgMobile: '/project-bingo-mobile.png',
+          url: '#'
         }
       ],
       cta: {

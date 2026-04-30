@@ -1,55 +1,16 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import YoutubePopup from '../components/YoutubePopup'
 import { useLanguage } from '../i18n/LanguageContext'
 
 function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0)
   const [showYoutube, setShowYoutube] = useState(false)
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
   const [activeNode, setActiveNode] = useState(null)
   const { t } = useLanguage()
   
   const projects = t('home.projects')
   const benefits = t('home.benefits.items')
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % projects.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length)
-  }
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index)
-  }
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
-
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 75) {
-      nextSlide()
-    }
-    if (touchStart - touchEnd < -75) {
-      prevSlide()
-    }
-  }
-
-  // Auto-play carousel
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide()
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [currentSlide])
 
   return (
     <>
@@ -157,64 +118,68 @@ function Home() {
         </div>
       </section>
 
-      {/* Projects Carousel Section */}
+      {/* Projects Section */}
       <section className="projects-section">
         <div className="container">
           <h2 className="section-title">{t('home.projectsSection.title')}</h2>
-          <p className="section-subtitle">
-            {t('home.projectsSection.subtitle')}
-          </p>
-          
-          <div className="carousel">
-            <div 
-              className="carousel-container"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              <div 
-                className="carousel-track"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {projects.map((project) => (
-                  <div key={project.id} className="carousel-slide">
-                    <div className="project-image">
-                      <img src={project.image} alt={project.title} />
-                      <div className="project-overlay">
-                        <h3>{project.title}</h3>
-                        <p>{project.description}</p>
-                      </div>
+          <p className="section-subtitle">{t('home.projectsSection.subtitle')}</p>
+
+          <div className="projects-grid">
+            {projects.map((project, i) => (
+              <article key={project.id} className={`project-card project-card--${i}`}>
+                {/* Mockup area */}
+                <div className="project-mockup">
+                  <div className="project-browser">
+                    <div className="browser-bar">
+                      <span className="browser-dot"></span>
+                      <span className="browser-dot"></span>
+                      <span className="browser-dot"></span>
+                      <span className="browser-url">{project.title.toLowerCase().replace(/ /g, '-')}.com</span>
+                    </div>
+                    <div className="browser-screen">
+                      {project.imgDesktop && !project.imgDesktop.includes('desktop.png') ? (
+                        <img src={project.imgDesktop} alt={`${project.title} desktop`} />
+                      ) : (
+                        <div className="screen-placeholder">
+                          <span>Captura desktop</span>
+                          <span className="placeholder-hint">1280 × 800 px</span>
+                        </div>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
-              
-              <button 
-                className="carousel-btn carousel-btn-prev" 
-                onClick={prevSlide}
-                aria-label={t('home.projectsSection.prevAria')}
-              >
-                ‹
-              </button>
-              <button 
-                className="carousel-btn carousel-btn-next" 
-                onClick={nextSlide}
-                aria-label={t('home.projectsSection.nextAria')}
-              >
-                ›
-              </button>
-            </div>
-            
-            <div className="carousel-dots">
-              {projects.map((_, index) => (
-                <button
-                  key={index}
-                  className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
-                  onClick={() => goToSlide(index)}
-                  aria-label={t('home.projectsSection.goToAria', { index: index + 1 })}
-                />
-              ))}
-            </div>
+                  <div className="project-mobile">
+                    <div className="mobile-notch"></div>
+                    <div className="mobile-screen">
+                      {project.imgMobile && !project.imgMobile.includes('mobile.png') ? (
+                        <img src={project.imgMobile} alt={`${project.title} mobile`} />
+                      ) : (
+                        <div className="screen-placeholder screen-placeholder--mobile">
+                          <span>Mobile</span>
+                          <span className="placeholder-hint">390 × 844</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Info */}
+                <div className="project-info">
+                  <span className="project-category">{project.category}</span>
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-desc">{project.description}</p>
+                  <ul className="project-tags">
+                    {project.tags.map(tag => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                  {project.url && project.url !== '#' && (
+                    <a href={project.url} className="project-visit" target="_blank" rel="noopener noreferrer">
+                      {t('home.projectsSection.visitLabel')}
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
