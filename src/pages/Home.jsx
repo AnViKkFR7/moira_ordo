@@ -137,7 +137,7 @@ function Home() {
                       <span className="browser-url">{project.title.toLowerCase().replace(/ /g, '-')}.com</span>
                     </div>
                     <div className="browser-screen">
-                      {project.imgDesktop && !project.imgDesktop.includes('desktop.png') ? (
+                      {project.imgDesktop ? (
                         <img src={project.imgDesktop} alt={`${project.title} desktop`} />
                       ) : (
                         <div className="screen-placeholder">
@@ -150,7 +150,7 @@ function Home() {
                   <div className="project-mobile">
                     <div className="mobile-notch"></div>
                     <div className="mobile-screen">
-                      {project.imgMobile && !project.imgMobile.includes('mobile.png') ? (
+                      {project.imgMobile ? (
                         <img src={project.imgMobile} alt={`${project.title} mobile`} />
                       ) : (
                         <div className="screen-placeholder screen-placeholder--mobile">

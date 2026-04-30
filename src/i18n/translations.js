@@ -96,31 +96,31 @@ export const translations = {
         {
           id: 1,
           category: 'Inmobiliaria',
-          title: 'Empresa inmobiliaria',
+          title: 'www.regiamare',
           description: 'Web corporativa minimalista para una agencia inmobiliaria. Gestión autónoma de propiedades, formularios de contacto y presencia digital sólida.',
           tags: ['Propiedades', 'CMS', 'Responsive', 'Formulario'],
-          imgDesktop: '/project-inmobiliaria-desktop.png',
-          imgMobile: '/project-inmobiliaria-mobile.png',
-          url: '#'
+          imgDesktop: '/projectes/landingRegiamare.png',
+          imgMobile: '/projectes/responsiveRegiaMare.png',
+          url: 'https://www.regiamare.com'
         },
         {
           id: 2,
           category: 'Reformas',
-          title: 'Empresa de reformas',
+          title: 'navagli',
           description: 'Sitio profesional para empresa de reformas y construcción. Portfolio de trabajos, servicios detallados y captación de clientes potenciales.',
           tags: ['Portfolio', 'Servicios', 'SEO', 'Contacto'],
-          imgDesktop: '/project-reformas-desktop.png',
-          imgMobile: '/project-reformas-mobile.png',
+          imgDesktop: '/projectes/navaglilanding.png',
+          imgMobile: '/projectes/navagli movil.png',
           url: '#'
         },
         {
           id: 3,
           category: 'Entretenimiento',
-          title: 'Bingo Musical',
+          title: 'musibingo',
           description: 'Aplicación web interactiva para jugar al bingo con canciones. Dinámica, divertida y lista para usar en eventos, fiestas y celebraciones.',
           tags: ['Juego interactivo', 'Tiempo real', 'Eventos', 'Música'],
-          imgDesktop: '/project-bingo-desktop.png',
-          imgMobile: '/project-bingo-mobile.png',
+          imgDesktop: '/projectes/Landing musibingo.png',
+          imgMobile: '/projectes/movilMusibingo.png',
           url: '#'
         }
       ],
@@ -691,9 +691,9 @@ export const translations = {
           title: 'Real estate company',
           description: 'Minimalist corporate website for a real estate agency. Autonomous property management, contact forms and solid digital presence.',
           tags: ['Properties', 'CMS', 'Responsive', 'Form'],
-          imgDesktop: '/project-inmobiliaria-desktop.png',
-          imgMobile: '/project-inmobiliaria-mobile.png',
-          url: '#'
+          imgDesktop: '/projectes/landingRegiamare.png',
+          imgMobile: '/projectes/responsiveRegiamare.png',
+          url: 'https://www.regiamare.com'
         },
         {
           id: 2,
@@ -701,8 +701,8 @@ export const translations = {
           title: 'Renovation company',
           description: 'Professional site for a construction and renovation company. Work portfolio, detailed services and lead generation.',
           tags: ['Portfolio', 'Services', 'SEO', 'Contact'],
-          imgDesktop: '/project-reformas-desktop.png',
-          imgMobile: '/project-reformas-mobile.png',
+          imgDesktop: '/projectes/navaglilanding.png',
+          imgMobile: '/projectes/navagli movil.png',
           url: '#'
         },
         {
@@ -711,8 +711,8 @@ export const translations = {
           title: 'Musical Bingo',
           description: 'Interactive web app to play bingo with songs. Dynamic, fun and ready to use at events, parties and celebrations.',
           tags: ['Interactive game', 'Real-time', 'Events', 'Music'],
-          imgDesktop: '/project-bingo-desktop.png',
-          imgMobile: '/project-bingo-mobile.png',
+          imgDesktop: '/projectes/Landing musibingo.png',
+          imgMobile: '/projectes/movilMusibingo.png',
           url: '#'
         }
       ],
@@ -1280,9 +1280,9 @@ export const translations = {
           title: 'Agence immobilière',
           description: 'Site corporate minimaliste pour une agence immobilière. Gestion autonome des biens, formulaires de contact et présence digitale solide.',
           tags: ['Biens', 'CMS', 'Responsive', 'Formulaire'],
-          imgDesktop: '/project-inmobiliaria-desktop.png',
-          imgMobile: '/project-inmobiliaria-mobile.png',
-          url: '#'
+          imgDesktop: '/projectes/landingRegiamare.png',
+          imgMobile: '/projectes/responsiveRegiaMare.png',
+          url: 'https://www.regiamare.com'
         },
         {
           id: 2,
@@ -1290,8 +1290,8 @@ export const translations = {
           title: 'Entreprise de rénovation',
           description: 'Site professionnel pour une entreprise de rénovation. Portfolio de réalisations, services détaillés et génération de prospects.',
           tags: ['Portfolio', 'Services', 'SEO', 'Contact'],
-          imgDesktop: '/project-reformas-desktop.png',
-          imgMobile: '/project-reformas-mobile.png',
+          imgDesktop: '/projectes/navaglilanding.png',
+          imgMobile: '/projectes/navagli movil.png',
           url: '#'
         },
         {
@@ -1300,8 +1300,8 @@ export const translations = {
           title: 'Bingo Musical',
           description: 'Application web interactive pour jouer au bingo avec des chansons. Dynamique, amusante et prête à l\'emploi pour événements et fêtes.',
           tags: ['Jeu interactif', 'Temps réel', 'Événements', 'Musique'],
-          imgDesktop: '/project-bingo-desktop.png',
-          imgMobile: '/project-bingo-mobile.png',
+          imgDesktop: '/projectes/Landing musibingo.png',
+          imgMobile: '/projectes/movilMusibingo.png',
           url: '#'
         }
       ],
