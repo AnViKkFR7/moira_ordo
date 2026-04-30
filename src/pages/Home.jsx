@@ -8,6 +8,7 @@ function Home() {
   const [showYoutube, setShowYoutube] = useState(false)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
+  const [activeNode, setActiveNode] = useState(null)
   const { t } = useLanguage()
   
   const projects = t('home.projects')
@@ -106,7 +107,36 @@ function Home() {
               </ul>
             </div>
             <div className="vp-visual">
-              <img src="/web-icon-set-drawn-chalkboard-with-white-chalk.jpg" alt="Sistema de iconos web" />
+              <div className="vp-cycle">
+                <div className="vp-cycle-ring"></div>
+                <div className="vp-cycle-core">
+                  <span className="vp-cycle-core-icon">∞</span>
+                  <span className="vp-cycle-core-label">{t('home.valueProposition.cycleCenter')}</span>
+                </div>
+                {[0, 1, 2].map((i) => (
+                  <button
+                    key={i}
+                    className={`vp-cycle-node vp-cycle-n${i}`}
+                    onClick={() => setActiveNode(i)}
+                    aria-label={t(`home.valueProposition.flowNodes.${i}`)}
+                  >
+                    <div className={`vp-cycle-dot vp-dot-n${i}`}></div>
+                    <span className="vp-cycle-tag">{t(`home.valueProposition.flowNodes.${i}`)}</span>
+                    <span className="vp-cycle-sub">{t(`home.valueProposition.flowTags.${i}`)}</span>
+                  </button>
+                ))}
+              </div>
+
+              {activeNode !== null && (
+                <div className="vp-popup-overlay" onClick={() => setActiveNode(null)}>
+                  <div className="vp-popup" onClick={e => e.stopPropagation()}>
+                    <button className="vp-popup-close" onClick={() => setActiveNode(null)} aria-label="Cerrar">✕</button>
+                    <div className={`vp-popup-dot vp-dot-n${activeNode}`}></div>
+                    <h4 className="vp-popup-title">{t(`home.valueProposition.flowNodes.${activeNode}`)}</h4>
+                    <p className="vp-popup-desc">{t(`home.valueProposition.flowPopup.${activeNode}`)}</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

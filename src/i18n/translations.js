@@ -57,6 +57,14 @@ export const translations = {
           'El creador define la estructura',
           'El cliente gestiona el contenido',
           'El sistema garantiza el orden'
+        ],
+        flowNodes: ['Diseñador', 'Moira Ordo', 'Cliente'],
+        flowTags: ['define estructura', 'ordena el flujo', 'gestiona contenido'],
+        cycleCenter: 'fluye',
+        flowPopup: [
+          'Define la arquitectura del proyecto. Establece los esquemas, los permisos de edición y la identidad visual. El cliente nunca toca lo que no debe.',
+          'El núcleo del sistema. Separa diseño de contenido, gestiona permisos y garantiza que cada pieza fluya en su lugar sin fricción.',
+          'Gestiona su propio contenido con total autonomía dentro de los límites definidos. Sin riesgo de romper el diseño.'
         ]
       },
       benefits: {
@@ -633,6 +641,14 @@ export const translations = {
           'The creator defines the structure',
           'The client manages the content',
           'The system guarantees order'
+        ],
+        flowNodes: ['Designer', 'Moira Ordo', 'Client'],
+        flowTags: ['defines structure', 'orders the flow', 'manages content'],
+        cycleCenter: 'flows',
+        flowPopup: [
+          'Defines the project architecture. Sets schemas, editing permissions and visual identity. The client never touches what they should not.',
+          'The system core. Separates design from content, manages permissions and ensures every piece flows into place without friction.',
+          'Manages their own content with full autonomy within defined boundaries. No risk of breaking the design.'
         ]
       },
       benefits: {
@@ -1204,6 +1220,14 @@ export const translations = {
           'Le createur definit la structure',
           'Le client gere le contenu',
           'Le systeme garantit l\'ordre'
+        ],
+        flowNodes: ['Designer', 'Moira Ordo', 'Client'],
+        flowTags: ['définit la structure', 'ordonne le flux', 'gère le contenu'],
+        cycleCenter: 'circule',
+        flowPopup: [
+          'Définit l\'architecture du projet. Établit les schémas, les permissions d\'edition et l\'identité visuelle. Le client ne touche jamais ce qu\'il ne doit pas.',
+          'Le noyau du système. Sépare design et contenu, gère les permissions et garantit que chaque élément s\'insère sans friction.',
+          'Gère son propre contenu en toute autonomie dans les limites définies. Sans risque de casser le design.'
         ]
       },
       benefits: {
