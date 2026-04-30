@@ -57,6 +57,14 @@ export const translations = {
           'El creador define la estructura',
           'El cliente gestiona el contenido',
           'El sistema garantiza el orden'
+        ],
+        flowNodes: ['Diseñador', 'Moira Ordo', 'Cliente'],
+        flowTags: ['define estructura', 'ordena el flujo', 'gestiona contenido'],
+        cycleCenter: 'fluye',
+        flowPopup: [
+          'Define la arquitectura del proyecto. Establece los esquemas, los permisos de edición y la identidad visual. El cliente nunca toca lo que no debe.',
+          'El núcleo del sistema. Separa diseño de contenido, gestiona permisos y garantiza que cada pieza fluya en su lugar sin fricción.',
+          'Gestiona su propio contenido con total autonomía dentro de los límites definidos. Sin riesgo de romper el diseño.'
         ]
       },
       benefits: {
@@ -81,30 +89,39 @@ export const translations = {
       },
       projectsSection: {
         title: 'Nuestros proyectos',
-        subtitle: 'Soluciones digitales diseñadas con precisión y ejecutadas con excelencia',
-        prevAria: 'Anterior',
-        nextAria: 'Siguiente',
-        goToAria: 'Ir a proyecto {index}'
+        subtitle: 'Cada web es una solución única. Diseñada, construida y entregada con orden.',
+        visitLabel: 'Ver proyecto ↗'
       },
       projects: [
         {
           id: 1,
-          image: '/Captura de pantalla 2026-02-07 113628.png',
-          title: 'Empresa inmobiliaria',
-          description: 'Web corporativa minimalista'
+          category: 'Inmobiliaria',
+          title: 'regiamare',
+          description: 'Web corporativa minimalista para una agencia inmobiliaria. Gestión autónoma de propiedades, formularios de contacto y presencia digital sólida.',
+          tags: ['Propiedades', 'CMS', 'Responsive', 'Formulario'],
+          imgDesktop: '/projectes/landingRegiamare.png',
+          imgMobile: '/projectes/responsiveRegiaMare.png',
+          url: 'https://www.regiamare.com'
         },
         {
           id: 2,
-          image: '/Captura de pantalla 2026-02-07 113822.png',
-          title: 'Propiedades destacadas',
-          description:
-            'Propiedades exclusivas en las mejores zonas de Barcelona y la Costa Dorada'
+          category: 'Reformas',
+          title: 'navagli',
+          description: 'Sitio profesional para empresa de reformas y construcción. Portfolio de trabajos, servicios detallados y captación de clientes potenciales.',
+          tags: ['Portfolio', 'Servicios', 'SEO', 'Contacto'],
+          imgDesktop: '/projectes/navaglilanding.png',
+          imgMobile: '/projectes/navagli movil.png',
+          url: 'https://www.navagli.com'
         },
         {
           id: 3,
-          image: '/Captura de pantalla 2026-02-07 113909.png',
-          title: 'Adaptada a móviles',
-          description: 'Responsive'
+          category: 'Entretenimiento',
+          title: 'musibingo',
+          description: 'Aplicación web interactiva para jugar al bingo con canciones. Dinámica, divertida y lista para usar en eventos, fiestas y celebraciones.',
+          tags: ['Juego interactivo', 'Tiempo real', 'Eventos', 'Música'],
+          imgDesktop: '/projectes/Landing musibingo.png',
+          imgMobile: '/projectes/movilMusibingo.png',
+          url: 'https://musibingo.com'
         }
       ],
       cta: {
@@ -633,6 +650,14 @@ export const translations = {
           'The creator defines the structure',
           'The client manages the content',
           'The system guarantees order'
+        ],
+        flowNodes: ['Designer', 'Moira Ordo', 'Client'],
+        flowTags: ['defines structure', 'orders the flow', 'manages content'],
+        cycleCenter: 'flows',
+        flowPopup: [
+          'Defines the project architecture. Sets schemas, editing permissions and visual identity. The client never touches what they should not.',
+          'The system core. Separates design from content, manages permissions and ensures every piece flows into place without friction.',
+          'Manages their own content with full autonomy within defined boundaries. No risk of breaking the design.'
         ]
       },
       benefits: {
@@ -656,29 +681,39 @@ export const translations = {
       },
       projectsSection: {
         title: 'Our projects',
-        subtitle: 'Digital solutions designed with precision and executed with excellence',
-        prevAria: 'Previous',
-        nextAria: 'Next',
-        goToAria: 'Go to project {index}'
+        subtitle: 'Every website is a unique solution. Designed, built and delivered with order.',
+        visitLabel: 'View project ↗'
       },
       projects: [
         {
           id: 1,
-          image: '/Captura de pantalla 2026-02-07 113628.png',
+          category: 'Real Estate',
           title: 'Real estate company',
-          description: 'Minimal corporate website'
+          description: 'Minimalist corporate website for a real estate agency. Autonomous property management, contact forms and solid digital presence.',
+          tags: ['Properties', 'CMS', 'Responsive', 'Form'],
+          imgDesktop: '/projectes/landingRegiamare.png',
+          imgMobile: '/projectes/responsiveRegiamare.png',
+          url: 'https://www.regiamare.com'
         },
         {
           id: 2,
-          image: '/Captura de pantalla 2026-02-07 113822.png',
-          title: 'Featured properties',
-          description: 'Exclusive properties in the best areas of Barcelona and Costa Dorada'
+          category: 'Construction',
+          title: 'Renovation company',
+          description: 'Professional site for a construction and renovation company. Work portfolio, detailed services and lead generation.',
+          tags: ['Portfolio', 'Services', 'SEO', 'Contact'],
+          imgDesktop: '/projectes/navaglilanding.png',
+          imgMobile: '/projectes/navagli movil.png',
+          url: 'https://www.navagli.com'
         },
         {
           id: 3,
-          image: '/Captura de pantalla 2026-02-07 113909.png',
-          title: 'Mobile-ready',
-          description: 'Responsive'
+          category: 'Entertainment',
+          title: 'Musical Bingo',
+          description: 'Interactive web app to play bingo with songs. Dynamic, fun and ready to use at events, parties and celebrations.',
+          tags: ['Interactive game', 'Real-time', 'Events', 'Music'],
+          imgDesktop: '/projectes/Landing musibingo.png',
+          imgMobile: '/projectes/movilMusibingo.png',
+          url: 'https://musibingo.com'
         }
       ],
       cta: {
@@ -1204,6 +1239,14 @@ export const translations = {
           'Le createur definit la structure',
           'Le client gere le contenu',
           'Le systeme garantit l\'ordre'
+        ],
+        flowNodes: ['Designer', 'Moira Ordo', 'Client'],
+        flowTags: ['définit la structure', 'ordonne le flux', 'gère le contenu'],
+        cycleCenter: 'circule',
+        flowPopup: [
+          'Définit l\'architecture du projet. Établit les schémas, les permissions d\'edition et l\'identité visuelle. Le client ne touche jamais ce qu\'il ne doit pas.',
+          'Le noyau du système. Sépare design et contenu, gère les permissions et garantit que chaque élément s\'insère sans friction.',
+          'Gère son propre contenu en toute autonomie dans les limites définies. Sans risque de casser le design.'
         ]
       },
       benefits: {
@@ -1227,29 +1270,39 @@ export const translations = {
       },
       projectsSection: {
         title: 'Nos projets',
-        subtitle: 'Des solutions digitales concues avec precision et executees avec excellence',
-        prevAria: 'Precedent',
-        nextAria: 'Suivant',
-        goToAria: 'Aller au projet {index}'
+        subtitle: 'Chaque site est une solution unique. Conçue, construite et livrée avec ordre.',
+        visitLabel: 'Voir le projet ↗'
       },
       projects: [
         {
           id: 1,
-          image: '/Captura de pantalla 2026-02-07 113628.png',
-          title: 'Entreprise immobiliere',
-          description: 'Site corporate minimaliste'
+          category: 'Immobilier',
+          title: 'Agence immobilière',
+          description: 'Site corporate minimaliste pour une agence immobilière. Gestion autonome des biens, formulaires de contact et présence digitale solide.',
+          tags: ['Biens', 'CMS', 'Responsive', 'Formulaire'],
+          imgDesktop: '/projectes/landingRegiamare.png',
+          imgMobile: '/projectes/responsiveRegiaMare.png',
+          url: 'https://www.regiamare.com'
         },
         {
           id: 2,
-          image: '/Captura de pantalla 2026-02-07 113822.png',
-          title: 'Biens en vedette',
-          description: 'Biens exclusifs dans les meilleures zones de Barcelone et de la Costa Dorada'
+          category: 'Construction',
+          title: 'Entreprise de rénovation',
+          description: 'Site professionnel pour une entreprise de rénovation. Portfolio de réalisations, services détaillés et génération de prospects.',
+          tags: ['Portfolio', 'Services', 'SEO', 'Contact'],
+          imgDesktop: '/projectes/navaglilanding.png',
+          imgMobile: '/projectes/navagli movil.png',
+          url: 'https://www.navagli.com'
         },
         {
           id: 3,
-          image: '/Captura de pantalla 2026-02-07 113909.png',
-          title: 'Adapte aux mobiles',
-          description: 'Responsive'
+          category: 'Divertissement',
+          title: 'Bingo Musical',
+          description: 'Application web interactive pour jouer au bingo avec des chansons. Dynamique, amusante et prête à l\'emploi pour événements et fêtes.',
+          tags: ['Jeu interactif', 'Temps réel', 'Événements', 'Musique'],
+          imgDesktop: '/projectes/Landing musibingo.png',
+          imgMobile: '/projectes/movilMusibingo.png',
+          url: 'https://musibingo.com'
         }
       ],
       cta: {
