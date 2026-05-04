@@ -699,8 +699,15 @@ body {
   animation: fadeIn 1s 0.3s forwards;
 }
 
-/* Cycle Diagram */
+/* Cycle Diagram — all dimensions driven by CSS variables */
 .vp-cycle {
+  /* Geometry variables (recalculate only these in breakpoints) */
+  --c-cen:     190px;   /* center = size / 2           */
+  --c-r:       130px;   /* orbital radius               */
+  --c-r-half:   65px;   /* c-r × sin(30°) = c-r × 0.5  */
+  --c-r-cos:   113px;   /* c-r × cos(30°) = c-r × 0.866*/
+  --c-core:    110px;   /* center circle diameter       */
+  --c-dot:      56px;   /* node dot diameter            */
   position: relative;
   width: 380px;
   height: 380px;
@@ -713,9 +720,9 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 260px;
-  height: 260px;
-  margin: -130px 0 0 -130px;
+  width:  calc(2 * var(--c-r));
+  height: calc(2 * var(--c-r));
+  margin: calc(-1 * var(--c-r)) 0 0 calc(-1 * var(--c-r));
   border-radius: 50%;
   border: 2px dashed rgba(107, 93, 79, 0.25);
   animation: orbitSpin 18s linear infinite;
@@ -744,8 +751,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 110px;
-  height: 110px;
+  width:  var(--c-core);
+  height: var(--c-core);
   border-radius: 50%;
   background: var(--color-primary);
   display: flex;
@@ -772,10 +779,10 @@ body {
   letter-spacing: 0.1em;
 }
 
-/* Nodes — equilateral triangle, radius 130px from center (190,190) */
-/* n0 top (270°):         x=190, y=60  */
-/* n1 bottom-right (30°): x=303, y=255 */
-/* n2 bottom-left (150°): x=77,  y=255 */
+/* Nodes — equilateral triangle
+   top anchored so that dot CENTER lands on the orbit ring:
+   CSS top = orbit_y - dot_height/2   (translateX(-50%) only, no Y shift)
+*/
 .vp-cycle-node {
   position: absolute;
   display: flex;
@@ -787,14 +794,26 @@ body {
   border: none;
   padding: 0;
   cursor: pointer;
-  transform: translate(-50%, -50%);
+  overflow: visible;
+  transform: translateX(-50%);
 }
 
 .vp-cycle-node:focus { outline: none; }
 
-.vp-cycle-n0 { top: 60px;  left: 190px; }
-.vp-cycle-n1 { top: 255px; left: 303px; }
-.vp-cycle-n2 { top: 255px; left: 77px;  }
+/* top = orbit_y - dot/2  →  dot center = orbit_y exactly */
+/* --c-nudge: desplazamiento visual a la derecha para n0 y n1 */
+.vp-cycle-n0 {
+  top:  calc(var(--c-cen) - var(--c-r) - var(--c-dot) / 2);
+  left: calc(var(--c-cen) + var(--c-nudge, 18px));
+}
+.vp-cycle-n1 {
+  top:  calc(var(--c-cen) + var(--c-r-half) - var(--c-dot) / 2);
+  left: calc(var(--c-cen) + var(--c-r-cos) + var(--c-nudge, 18px));
+}
+.vp-cycle-n2 {
+  top:  calc(var(--c-cen) + var(--c-r-half) - var(--c-dot) / 2);
+  left: calc(var(--c-cen) - var(--c-r-cos));
+}
 
 .vp-cycle-node:hover .vp-cycle-dot {
   transform: scale(1.18);
@@ -802,8 +821,8 @@ body {
 }
 
 .vp-cycle-dot {
-  width: 56px;
-  height: 56px;
+  width:  var(--c-dot);
+  height: var(--c-dot);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1566,10 +1585,24 @@ body {
     order: 1;
   }
 
+  /* Cycle — 260px container: scale factor 260/380 = 0.684               */
+  /* c-r=89  c-r-half=45  c-r-cos=77  core=75  dot=44                   */
   .vp-cycle {
     width: 260px;
     height: 260px;
+    --c-cen:    130px;
+    --c-r:       89px;
+    --c-r-half:  45px;
+    --c-r-cos:   77px;
+    --c-core:    75px;
+    --c-dot:     44px;
+    --c-nudge:   12px;
   }
+
+  .vp-cycle-core-icon  { font-size: 1.3rem; }
+  .vp-cycle-core-label { font-size: 0.6rem; }
+  .vp-cycle-tag        { font-size: 0.7rem; }
+  .vp-cycle-sub        { font-size: 0.58rem; }
 
   .footer-content {
     grid-template-columns: 1fr;
@@ -1719,6 +1752,25 @@ body {
   .hero-content .tagline {
     font-size: 1rem;
   }
+
+  /* Cycle — 200px container: scale factor 200/380 = 0.526               */
+  /* c-r=68  c-r-half=34  c-r-cos=59  core=58  dot=36                   */
+  .vp-cycle {
+    width: 200px;
+    height: 200px;
+    --c-cen:    100px;
+    --c-r:       68px;
+    --c-r-half:  34px;
+    --c-r-cos:   59px;
+    --c-core:    58px;
+    --c-dot:     36px;
+    --c-nudge:    9px;
+  }
+
+  .vp-cycle-core-icon  { font-size: 1rem; }
+  .vp-cycle-core-label { font-size: 0.5rem; }
+  .vp-cycle-tag        { font-size: 0.62rem; }
+  .vp-cycle-sub        { display: none; }  /* ocultar en pantallas muy pequeñas */
 
   .container {
     padding: 0 var(--spacing-sm);
